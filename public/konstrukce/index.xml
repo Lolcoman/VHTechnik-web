@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Konstrukces on VHTechnik</title>
+    <link>//localhost:1313/konstrukce/</link>
+    <description>Recent content in Konstrukces on VHTechnik</description>
+    <generator>Hugo</generator>
+    <language>cs</language>
+    <lastBuildDate>Tue, 17 Dec 2024 17:27:21 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/konstrukce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Konstrukce</title>
+      <link>//localhost:1313/konstrukce/konstrukce/</link>
+      <pubDate>Tue, 17 Dec 2024 17:27:21 +0100</pubDate>
+      <guid>//localhost:1313/konstrukce/konstrukce/</guid>
+      <description>&lt;h1 id=&#34;konstrukce&#34;&gt;Konstrukce&lt;/h1&gt;&#xA;&lt;p&gt;• návrh přípravků a zařízení&#xA;• zakázkové konstrukční práce dle vašemu požadavku&#xA;• zhotovení výkresové dokumentace ve 3D – jsme vlastníky licencí SolidWorks&#xA;• převod výkresové dokumentace do 3D modelů a elektronické podoby&#xA;• konstrukce měřidel a mnoho dalšího&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
