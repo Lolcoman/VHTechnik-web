@@ -1,0 +1,12 @@
+<div class="carousel-wrapper">
+  <div class="carousel">
+    {{ range .Page.Params.images }}
+    <div class="carousel-slide">
+      <img src="{{ . }}" alt="Carousel Image" />
+    </div>
+    {{ end }}
+  </div>
+  <!-- Navigační tlačítka -->
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>

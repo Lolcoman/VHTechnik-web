@@ -1,21 +1,14 @@
 {{ define "main" }}
-    <!-- Hlavní stránka -->
-    <div id="domu">
-        <h1>{{ .Title }}</h1>
-        <div>
-            {{ .Content }}
-        </div>
-    </div>
+<!-- Hlavní stránka -->
+<div id="domu">
+  <h1>{{ .Title }}</h1>
+  <div>{{ .Content }}</div>
+</div>
 
-    <!-- Dynamické načtení sekcí -->
-    {{ range .Site.RegularPages }}
-        {{ if not .IsHome }}
-        <section id="{{ .File.BaseFileName }}">
-            <h2>{{ .Title }}</h2>
-            <div>
-                {{ .Content }}
-            </div>
-        </section>
-        {{ end }}
-    {{ end }}
-{{ end }}
+<!-- Dynamické načtení sekcí -->
+{{ range .Site.RegularPages }} {{ if not .IsHome }}
+<section id="{{ .File.BaseFileName }}">
+  <h2>{{ .Title }}</h2>
+  <div>{{ .Content }}</div>
+</section>
+{{ end }} {{ end }} {{ end }}
