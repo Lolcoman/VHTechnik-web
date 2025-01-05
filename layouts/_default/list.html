@@ -1,8 +1,34 @@
 {{ define "main" }}
-<!-- Hlavní stránka -->
-<div id="domu">
-  <h1>{{ .Title }}</h1>
-  <div>{{ .Content }}</div>
+<div id="domu" class="flex-container">
+  <!-- Vlevo: Text -->
+  <div class="text-left">
+    <h1>{{ .Title }}</h1>
+    <div>{{ .Content }}</div>
+  </div>
+
+  <!-- Uprostřed: Slider -->
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      {{ range .Params.images }}
+      <div class="carousel-slide">
+        <img src="{{ . }}" alt="Carousel Image" />
+      </div>
+      {{ end }}
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <!-- Vpravo: Odrážky -->
+  <div class="bullet-points">
+    <div class="bullet-points-inner">
+      <ul>
+        {{ range .Params.bullet_points }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
 </div>
 
 <!-- Dynamické načtení sekcí -->

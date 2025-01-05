@@ -16,5 +16,5 @@ weight =  3
 - renovace – máme speciální mycí box
 - popis laserem
 
-Obrábíme ocel, titan, nerez, hliníkové slitiny, barevné kovy, plasty a další materiály.
-K dispozici máme soustruhy, frézy, obrážečku, pískovací box, Laser a další
+_Obrábíme ocel, titan, nerez, hliníkové slitiny, barevné kovy, plasty a další materiály._
+_K dispozici máme soustruhy, frézy, obrážečku, pískovací box, laser a další_

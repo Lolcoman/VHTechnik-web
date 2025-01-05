@@ -5,6 +5,10 @@ html {
   box-sizing: border-box;
 }
 
+/* Úpravy pro hlavní obsah, aby nebyl zakrytý */
+main {
+  padding-top: 50px; /* Upravte podle výšky vaší navigace */
+}
 /* Fixní navigace */
 nav {
   position: fixed;
@@ -202,4 +206,154 @@ button.next {
 button.prev:hover,
 button.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+#domu {
+  padding: 50px;
+  margin-bottom: 230px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Rozdělí prostor mezi sekce */
+  gap: 20px; /* Mezera mezi sekcemi */
+  align-items: flex-start; /* Zarovná všechny položky k vrchu (top) */
+}
+
+.text-left {
+  flex: 1;
+  text-align: left;
+}
+.carousel-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Odrážky uprostřed vedle slideru */
+.bullet-points {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Odrážky ve sloupci */
+  justify-content: center; /* Vertikální centrování odrážek */
+  text-align: left; /* Text zarovnaný vlevo */
+  height: 100%; /* Zajistí, že bullet-points budou mít maximální výšku */
+  margin-top: 50px;
+}
+/* Vnitřní kontejner pro odrážky */
+.bullet-points-inner {
+  margin-left: 80px; /* Posun odrážek doprava uvnitř bullet-points */
+  text-align: left; /* Zajišťuje zarovnání textu vlevo */
+}
+.bullet-points ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bullet-points li {
+  margin-bottom: 50px;
+  position: relative; /* Pro pozici čtverečku */
+  font-size: 18px; /* Velikost textu */
+}
+
+/* Ikona ozubeného kolečka před textem odrážky */
+.bullet-points li::before {
+  content: "\f013"; /* Unicode pro ikonu ozubeného kolečka */
+  font-family: "Font Awesome 5 Free"; /* Použij Font Awesome */
+  font-weight: 900; /* Pro solidní (plnou) verzi ikony */
+  position: absolute;
+  left: -40px; /* Umístění ikony vlevo před text */
+  top: 50%;
+  transform: translateY(-50%); /* Vertikální centrování ikony */
+  font-size: 24px; /* Velikost ikony */
+  color: #000000; /* Modrá barva pro ikonu */
+}
+[id="domu"] {
+  scroll-margin-top: 60px; /* Nastav výšku podle velikosti hlavičky */
+}
+
+/* Obecné stylování sekcí */
+section {
+  background-color: #f9f9f9; /* Jemné pozadí */
+  margin-bottom: 20px; /* Mezera mezi sekcemi */
+  border-radius: 10px; /* Zaoblené rohy */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Jemný stín */
+}
+
+/* Nadpisy v sekcích */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-family: "Montserrat", sans-serif; /* Moderní font */
+  text-transform: uppercase; /* Velká písmena */
+  letter-spacing: 2px; /* Prostor mezi písmeny */
+  border-bottom: 2px solid #ff6600; /* Podtržení */
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Obsah uvnitř sekcí */
+.section-content {
+  font-family: "Arial", sans-serif;
+  color: #555;
+  line-height: 1.6; /* Lepší čitelnost textu */
+  /* max-width: 800px;  */
+  margin: 0 auto; /* Zarovnání na střed */
+}
+
+/* Stylování seznamů */
+section ul {
+  list-style-type: none; /* Odebrání výchozích odrážek */
+  padding: 0;
+}
+
+section ul li {
+  position: relative; /* Pro ikonku */
+  padding-left: 30px; /* Vytvoří místo pro ikonku */
+  margin-bottom: 15px; /* Mezera mezi položkami */
+  font-size: 1.2rem; /* Větší text */
+  color: #333; /* Barva textu */
+}
+
+/* Přidání ikonky před každou položku */
+section ul li::before {
+  content: "\f0c8"; /* Font Awesome kód pro čtverec */
+  font-family: "Font Awesome 5 Free"; /* Font Awesome */
+  font-weight: 900; /* Tučná varianta */
+  position: absolute;
+  left: 0; /* Umístění vlevo */
+  top: 50%;
+  transform: translateY(-50%); /* Vertikální zarovnání */
+  font-size: 1.2rem;
+  color: #ff6600; /* Barva ikonky */
+}
+
+#kontakty div div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#kontakty ul {
+  padding: 0;
+  margin: 0;
+  padding-left: 10px;
+}
+
+#kontakty li {
+  font-size: 1rem;
+  color: #333;
+  position: unset;
+  margin-bottom: 5px;
+  padding-left: 0px;
+}
+#kontakty blockquote p {
+  margin-top: -15px;
+}
+#kontakty h2 {
+  flex-direction: column;
+}
+#kontakty ul li::before {
+  all: unset;
 }
