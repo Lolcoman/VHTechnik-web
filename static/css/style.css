@@ -33,7 +33,7 @@ nav ul {
 }
 nav ul .logo {
   position: absolute; /* Umožňuje nezávislé zarovnání loga */
-  left: 100px; /* Posune logo vlevo */
+  left: 60px; /* Posune logo vlevo */
   font-size: 20px;
   font-weight: bold;
 }

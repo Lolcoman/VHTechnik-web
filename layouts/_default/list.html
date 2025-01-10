@@ -31,11 +31,12 @@
 </div>
 
 <!-- Dynamické načtení sekcí -->
-{{ range sort .Site.RegularPages "Params.weight" }} {{ if not .IsHome }}
+{{ range sort .Site.RegularPages "Params.weight" }} {{ if not .IsHome }} {{if ne
+.Slug "fotky"}}
 <section id="{{ .File.Dir | path.Base }}">
   <div class="section-content">
     <h2>{{ .Title }}</h2>
     <div>{{ .Content }}</div>
   </div>
 </section>
-{{ end }} {{ end }} {{ end }}
+{{ end }} {{ end }} {{ end }} {{end}}

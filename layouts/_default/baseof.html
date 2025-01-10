@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/css/gallery.css" />
+
     <link rel="stylesheet" href="/css/style.css" />
     <!-- Přidání stylů pro patičku -->
     <link rel="stylesheet" href="/css/footer.css" />
@@ -17,11 +19,17 @@
       rel="stylesheet"
     />
     <script src="/js/slider.js"></script>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <header>
       <nav>
         <ul>
+          {{ if .IsHome }}
           <li class="logo">VHTechnik</li>
           <li><a href="#domu">Domů</a></li>
           <li><a href="#konstrukce">Konstrukce</a></li>
@@ -29,10 +37,22 @@
           <li><a href="#vyroba">Výroba</a></li>
           <li><a href="#kontakty">Kontakty</a></li>
           <li><a href="#ofirme">O firmě</a></li>
+          {{ else }}
+          <li><a href="/">Domů</a></li>
+          {{ end }}
+          <li><a href="/fotky/">Fotky</a></li>
         </ul>
       </nav>
     </header>
-    <main>{{ block "main" . }}{{ end }}</main>
+    <main>
+      {{ if eq .Slug "fotky" }}
+      <!-- Stránka fotek, pouze galerie -->
+      {{ .Content }}
+      <!-- Vykreslíme obsah stránky (shortcode se zde vykreslí) -->
+      {{ else }}
+      <!-- Ostatní stránky -->
+      {{ block "main" . }}{{ end }} {{ end }}
+    </main>
     <footer class="footer">
       <div class="footer-container">
         <!-- Levá část: O firmě -->
@@ -49,6 +69,12 @@
             class="footer-logo"
           />
           <p>&copy; 2024 VHTechnik</p>
+          <p>
+            <i
+              >„Tato stránka nepoužívá cookies ani nesleduje uživatelská
+              data.“</i
+            >
+          </p>
         </div>
 
         <!-- Pravá část: Kontakt -->

@@ -1,0 +1,73 @@
+/* Flexibilní a moderní grid pro galerii */
+.image-gallery {
+  list-style: none; /* Odebrání odrážek */
+  padding: 0;
+  margin: 0;
+  display: grid; /* Používáme grid pro flexibilní rozložení */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(150px, 1fr)
+  ); /* Automatické přizpůsobení sloupců */
+  gap: 24px; /* Větší mezery mezi obrázky */
+  padding: 150px; /* Odsazení pro místo pro footer */
+  transition: padding-bottom 0.3s ease; /* Hladký přechod pro odsazení */
+}
+
+.image-gallery li {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px; /* Modernější zaoblení rohů */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Větší a jemnější stín */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Přidání animace pro efekty při hoveru */
+}
+
+.image-gallery li:hover {
+  transform: scale(1.05); /* Mírné zvětšení obrázku při hoveru */
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2); /* Zvětšení stínu při hoveru */
+}
+
+.image-gallery li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease; /* Efekt pro obrázek při hoveru */
+}
+
+.image-gallery li:hover img {
+  transform: scale(1.1); /* Efekt zvětšení obrázku při hoveru */
+}
+
+.image-gallery li span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.7); /* Tmavší pozadí pro lepší kontrast */
+  color: white;
+  font-size: 0.9rem; /* Menší písmo pro název */
+  text-align: center;
+  font-weight: normal; /* Méně tučné písmo */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  opacity: 1; /* Zajišťuje, že text bude vždy viditelný */
+}
+
+/* Responsivní design pro mobilní zařízení */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Užší sloupce pro menší obrazovky */
+    padding: 50px; /* Zmenšení paddingu pro mobilní zařízení */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: 1fr; /* Jeden sloupec pro velmi malé obrazovky */
+    padding: 20px; /* Ještě menší padding pro velmi malé obrazovky */
+  }
+}

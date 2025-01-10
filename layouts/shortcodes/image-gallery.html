@@ -1,0 +1,23 @@
+{{ $dir := .Get "gallery_dir" }} {{ if not $dir }}
+<!-- Pokud není `gallery_dir` nastaven, použijeme výchozí složku "gallery" -->
+{{ $dir = "/gallery" }} {{ end }}
+
+<ul class="image-gallery">
+  {{ $fullDir := print "static" $dir }}
+  <!-- Složka pro obrázky -->
+  {{ $images := readDir $fullDir }}
+  <!-- Čteme soubory z adresáře -->
+  {{ range $images }} {{ if not .IsDir }}
+  <!-- Zkontrolujeme, že to není složka -->
+  <li>
+    <a href="{{ $dir | absURL }}/{{ .Name }}" title="{{ .Name }}">
+      <img src="{{ $dir | absURL }}/{{ .Name }}" alt="{{ .Name }}" />
+    </a>
+    <span
+      >{{ .Name | strings.TrimSuffix ".jpg" | strings.TrimSuffix ".jpeg" |
+      strings.TrimSuffix ".png" }}</span
+    >
+    <!-- Zobrazení názvu obrázku bez přípony (pro různé formáty) -->
+  </li>
+  {{ end }} {{ end }}
+</ul>
