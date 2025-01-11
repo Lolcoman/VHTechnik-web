@@ -3,11 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ .Title }}</title>
-    <link rel="stylesheet" href="/css/gallery.css" />
+    <!-- Title pro SEO -->
+    <title>{{ .Site.Title }}</title>
 
+    <!-- Meta description pro SEO -->
+    <meta name="description" content="{{ .Description | default .Summary }}" />
+
+    <!-- Open Graph meta tagy pro lepší zobrazení na sociálních sítích -->
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+    <meta
+      property="og:description"
+      content="{{ .Description | default .Summary }}"
+    />
+    <meta property="og:image" content="{{ .Site.BaseURL }}favicon.ico" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="website" />
+
+    <!-- Přidání stylů -->
+    <link rel="stylesheet" href="/css/gallery.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <!-- Přidání stylů pro patičku -->
     <link rel="stylesheet" href="/css/footer.css" />
     <!-- Přidání fontů z Google Fonts -->
     <link
@@ -91,3 +105,12 @@
     </footer>
   </body>
 </html>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "name": "{{ .Title }}",
+    "description": "{{ .Description | default .Summary }}",
+    "url": "{{ .Permalink }}"
+  }
+</script>

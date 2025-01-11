@@ -1,3 +1,5 @@
 baseURL = 'https://vh-technik.cz'
 languageCode = 'cs'
-title = 'VHTechnik'
+title = 'VH-TECHNIK s.r.o.'
+[params]
+  enableSitemap = true
