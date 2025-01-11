@@ -1,7 +1,6 @@
 {{ $dir := .Get "gallery_dir" }} {{ if not $dir }}
 <!-- Pokud není `gallery_dir` nastaven, použijeme výchozí složku "gallery" -->
 {{ $dir = "/gallery" }} {{ end }}
-
 <ul class="image-gallery">
   {{ $fullDir := print "static" $dir }}
   <!-- Složka pro obrázky -->
@@ -13,11 +12,8 @@
     <a href="{{ $dir | absURL }}/{{ .Name }}" title="{{ .Name }}">
       <img src="{{ $dir | absURL }}/{{ .Name }}" alt="{{ .Name }}" />
     </a>
-    <span
-      >{{ .Name | strings.TrimSuffix ".jpg" | strings.TrimSuffix ".jpeg" |
-      strings.TrimSuffix ".png" }}</span
-    >
-    <!-- Zobrazení názvu obrázku bez přípony (pro různé formáty) -->
+    <span>{{ .Name | replaceRE "(?i)\\.(jpg|jpeg|png)$" "" }}</span>
+    <!-- Odstranění přípony souboru pro různé formáty (case-insensitive) -->
   </li>
   {{ end }} {{ end }}
 </ul>

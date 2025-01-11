@@ -8,4 +8,6 @@ gallery_dir = "/gallery"
 slug = "fotky"
 +++
 
+# Fotky
+
 {{< image-gallery gallery_dir="/gallery" >}}
