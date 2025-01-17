@@ -82,3 +82,52 @@
     text-align: center;
   }
 }
+@media screen and (max-width: 768px) {
+  /* Změní uspořádání footeru na mobilních zařízeních na vedle sebe */
+  .footer-container {
+    flex-direction: row; /* Sekce vedle sebe */
+    justify-content: space-between; /* Rozdělí prostor rovnoměrně mezi sekcemi */
+    padding: 10px 0; /* Snížení paddingu pro zkompaktizování footeru */
+    flex-wrap: wrap; /* Umožní zalamování sekcí */
+  }
+
+  /* Zmenšení velikosti loga */
+  .footer-logo {
+    max-height: 30px; /* Zmenšení loga na mobilních zařízeních */
+  }
+
+  /* Zmenšení písma v levé, střední a pravé sekci */
+  .footer-left p,
+  .footer-center p,
+  .footer-right p {
+    font-size: 0.7rem; /* Menší písmo pro texty */
+    margin: 3px 0; /* Snížení mezer mezi texty */
+  }
+
+  /* Menší font pro nadpisy */
+  .footer h3 {
+    font-size: 10px; /* Menší velikost nadpisu */
+    margin-bottom: 3px; /* Menší mezera pod nadpisem */
+  }
+
+  /* Změna velikosti písma pro všechny texty */
+  .footer p {
+    font-size: 0.7rem; /* Zmenšení písma pro texty */
+    color: #ddd;
+    margin: 2px 0; /* Zmenšení mezer mezi texty */
+  }
+
+  /* Změna šířky sekcí */
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    margin-bottom: 10px; /* Snížení mezer mezi sekcemi */
+    width: 32%; /* Zajištění rovnoměrné šířky pro všechny sekce */
+  }
+
+  /* Zajištění, že text v pravé sekci bude mít dostatek prostoru */
+  .footer-right {
+    white-space: normal; /* Umožní textu zalamovat se na novou řadu */
+    word-wrap: break-word; /* Zajistí, že dlouhé slova se zabalí */
+  }
+}

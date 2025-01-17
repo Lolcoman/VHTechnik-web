@@ -41,20 +41,20 @@
   </head>
   <body>
     <header>
-      <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <nav class="menu">
         <ul>
           {{ if .IsHome }}
-          <li class="logo">VHTechnik</li>
           <li><a href="#domu">Domů</a></li>
-          <li><a href="#konstrukce">Konstrukce</a></li>
-          <li><a href="#brusne-kotouce">Brusné kotouče</a></li>
-          <li><a href="#vyroba">Výroba</a></li>
-          <li><a href="#kontakty">Kontakty</a></li>
           <li><a href="#ofirme">O firmě</a></li>
+          <li><a href="#konstrukce">Konstrukce</a></li>
+          <li><a href="#vyroba">Výroba</a></li>
+          <li><a href="#brusne-kotouce">Brusné kotouče</a></li>
+          <li><a href="#kontakty">Kontakty</a></li>
           {{ else }}
           <li><a href="/">Domů</a></li>
           {{ end }}
-          <li><a href="/fotky/">Fotky</a></li>
+          <li><a href="/fotky/">Fotogalerie</a></li>
         </ul>
       </nav>
     </header>
@@ -71,7 +71,7 @@
       <div class="footer-container">
         <!-- Levá část: O firmě -->
         <div class="footer-left">
-          <h3>VHTechnik</h3>
+          <h3>VH-Technik</h3>
           <p><i>"Od návrhu, přes konstrukci až po výrobu"</i></p>
         </div>
 
@@ -82,7 +82,7 @@
             alt="Logo VHTechnik"
             class="footer-logo"
           />
-          <p>&copy; 2024 VHTechnik</p>
+          <p>&copy; 2024 VH-Technik</p>
           <p>
             <i
               >„Tato stránka nepoužívá cookies ani nesleduje uživatelská
@@ -113,4 +113,20 @@
     "description": "{{ .Description | default .Summary }}",
     "url": "{{ .Permalink }}"
   }
+</script>
+<script>
+  function toggleMenu() {
+    const menu = document.querySelector(".menu");
+    menu.classList.toggle("show");
+  }
+
+  // Zavře menu při kliknutí na jakýkoli prvek v menu
+  const menuItems = document.querySelectorAll(".menu a"); // nebo .menu li, pokud používáte seznam
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const menu = document.querySelector(".menu");
+      menu.classList.remove("show");
+    });
+  });
 </script>

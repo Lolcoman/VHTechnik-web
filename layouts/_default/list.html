@@ -2,7 +2,7 @@
 <div id="domu" class="flex-container">
   <!-- Vlevo: Text -->
   <div class="text-left">
-    <div>{{ .Content }}</div>
+    <img src="/images/LogoWH.png" alt="Logo WH" />
   </div>
 
   <!-- Uprostřed: Slider -->
@@ -20,6 +20,7 @@
 
   <!-- Vpravo: Odrážky -->
   <div class="bullet-points">
+    <div class="text-right">{{ .Content }}</div>
     <div class="bullet-points-inner">
       <ul>
         {{ range .Params.bullet_points }}

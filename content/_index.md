@@ -1,7 +1,7 @@
 +++
 date = '2024-12-17T17:27:12+01:00'
 draft = true
-title = 'VHTechnik'
+title = 'VH-Technik'
 images = [
     "/images/slide1.jpg",
     "/images/slide2.jpg",
@@ -27,4 +27,3 @@ weight = 1
 
 Nabízíme vysoce přesné výrobky dle vlastní konstrukce či Vaší technické dokumentace, nebo výroba
 podle předaného vzoru.
-![alt](/images/LogoWH.png)

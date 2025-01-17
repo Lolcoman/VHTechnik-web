@@ -55,20 +55,15 @@
   opacity: 1; /* Zajišťuje, že text bude vždy viditelný */
 }
 
-/* Responsivní design pro mobilní zařízení */
-@media (max-width: 768px) {
+/* Responzivní styly */
+@media screen and (max-width: 768px) {
   .image-gallery {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(200px, 1fr)
-    ); /* Užší sloupce pro menší obrazovky */
-    padding: 50px; /* Zmenšení paddingu pro mobilní zařízení */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .image-gallery {
-    grid-template-columns: 1fr; /* Jeden sloupec pro velmi malé obrazovky */
-    padding: 20px; /* Ještě menší padding pro velmi malé obrazovky */
+    grid-template-columns: 1fr;
   }
 }

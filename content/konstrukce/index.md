@@ -6,9 +6,9 @@ weight =  1
 +++
 
 - návrh přípravků a zařízení
-- zakázkové konstrukční práce dle vašemu požadavku
+- zakázkové konstrukční práce dle Vašeho požadavku
 - zhotovení výkresové dokumentace ve 3D – jsme vlastníky licencí SolidWorks
-- převod výkresové dokumentace do 3D modelů a elektronické podoby
+- převod výkresové dokumentace do elektronické podoby včetně 3D modelů
 - konstrukce měřidel a mnoho dalšího
 
 ![alt](/images/slide4.jpg)

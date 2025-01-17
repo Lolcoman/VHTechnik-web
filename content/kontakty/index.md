@@ -11,8 +11,7 @@ weight =  4
   - 621 00 Brno - Medlánky
   - IČO: 09274014
   - DIČ: CZ09274014
-  - fakturace@vh-technik.cz - **sem prosím posílat faktury,**
-  - **urychlíte tím jejich zpracování a proplacení**
+  - fakturace@vh-technik.cz
 
 ---
 

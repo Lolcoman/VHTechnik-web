@@ -22,23 +22,8 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: relative;
-}
-nav ul .logo {
-  position: absolute; /* Umožňuje nezávislé zarovnání loga */
-  left: 60px; /* Posune logo vlevo */
-  font-size: 20px;
-  font-weight: bold;
-}
 nav ul li {
-  margin: 0 25px;
+  margin: 0 20px;
 }
 
 nav ul li a {
@@ -104,50 +89,21 @@ section h2 {
   background: #cccccc;
 }
 
-/* Styly pro mobilní zařízení */
-@media screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  section {
-    padding: 80px 20px 40px;
-  }
-
-  section h2 {
-    font-size: 2rem;
-  }
-}
-
 /* Kontejner pro carousel */
 .carousel-wrapper {
   position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
   width: 30%;
   /* max-width: 1400px; */
   margin: 20px auto;
   overflow: hidden;
   /* aspect-ratio: 16 / 6; */
-  height: 400px;
+  height: 350px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
 }
-
-/* Kontejner pro carousel */
-/* .carousel-wrapper {
-  position: relative;
-  width: 40%;
-  max-width: 1400px;
-  margin: 20px auto;
-  overflow: hidden;
-  height: 420px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
-} */
 
 /* Obsah carouselu */
 .carousel {
@@ -173,14 +129,6 @@ section h2 {
 .carousel-slide.active {
   opacity: 1;
 }
-/* 
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}*/
 
 .carousel-slide img {
   width: 100%;
@@ -235,6 +183,10 @@ h1 {
   /* display: inline-block; */
   padding-bottom: 10px;
 }
+.text-right {
+  font-size: 1.3rem;
+  color: #333;
+}
 .text-left {
   flex: 1;
   text-align: left;
@@ -249,11 +201,6 @@ h1 {
   margin: 100px auto;
   filter: brightness(0%);
 }
-.carousel-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
 
 /* Odrážky uprostřed vedle slideru */
 .bullet-points {
@@ -263,7 +210,6 @@ h1 {
   /* justify-content: center; Vertikální centrování odrážek */
   text-align: left; /* Text zarovnaný vlevo */
   height: 100%; /* Zajistí, že bullet-points budou mít maximální výšku */
-  margin-top: 50px;
 }
 /* Vnitřní kontejner pro odrážky */
 .bullet-points-inner {
@@ -404,4 +350,187 @@ section ul li::before {
 
 #konstrukce > div {
   display: grid;
+}
+
+/* Globální styly navigace */
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.menu {
+  display: flex; /* Normálně viditelné na desktopu */
+  flex-direction: row;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.menu li a:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+
+/* Tlačítko pro otevření menu na mobilu */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobilní zobrazení */
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none; /* Skryjeme menu */
+    flex-direction: column; /* Zobrazí se vertikálně */
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .menu.show {
+    display: flex; /* Zobrazíme menu po kliknutí */
+  }
+
+  .menu-toggle {
+    display: block; /* Tlačítko viditelné pouze na mobilech */
+  }
+
+  .menu li {
+    border-bottom: 1px solid #444; /* Oddělovač mezi položkami */
+  }
+}
+
+/* Styly pro mobilní zařízení */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  section {
+    padding: 80px 20px 40px;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+}
+/* Responzivní styly */
+@media screen and (max-width: 1024px) {
+  nav ul li {
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Pro flex-container */
+  #domu {
+    height: 920px;
+  }
+  .flex-container {
+    flex-direction: column; /* Změní směr na sloupec */
+    align-items: center; /* Zarovná obsah na střed */
+    gap: 30px; /* Menší mezery mezi sekcemi */
+  }
+
+  /* Pro .text-right */
+  .text-right {
+    font-size: 1.3rem; /* Zmenšení velikosti písma pro mobil */
+  }
+
+  /* Pro .text-left */
+  .text-left {
+    font-size: 1.1rem; /* Zmenšení velikosti písma */
+    padding-left: 15px; /* Menší odsazení */
+    flex: none;
+  }
+
+  /* Pro bullet-points */
+  .bullet-points {
+    gap: 15px; /* Menší mezera mezi odrážkami */
+  }
+
+  .bullet-points-inner {
+    margin-left: 45px;
+  }
+  .bullet-points li::before {
+    font-size: 20px; /* Zmenšení ikony pro mobil */
+    left: -30px; /* Posun ikony */
+  }
+
+  .bullet-points li {
+    margin-bottom: 20px; /* Zmenšení mezery mezi odrážkami */
+  }
+
+  /* Pro carousel-wrapper */
+  .carousel-wrapper {
+    width: 100%; /* Zůstane šířka 100% */
+    height: 500px; /* Zvětšení výšky carouselu */
+  }
+
+  .carousel-slide img {
+    object-fit: cover; /* Zajištění lepšího přizpůsobení obrázku */
+  }
+
+  /* Pro tlačítka carouselu */
+  button.prev,
+  button.next {
+    padding: 5px 8px; /* Zmenšení velikosti tlačítek */
+  }
+
+  /* Pro logo */
+  .text-left img {
+    max-width: 50%; /* Zmenšení velikosti loga */
+    margin: 20px auto; /* Zmenšení mezery */
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  #kontakty ul {
+    padding-left: 0;
+  }
+  #kontakty ul li {
+    margin-left: 10px;
+  }
+  #kontakty div div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+  #kontakty > div > div > blockquote > p {
+    text-align: center;
+    border-bottom: 2px solid #3b3a3a;
+    font-size: 1.3rem;
+  }
+  #kontakty > div > div > blockquote {
+    padding: 0 auto;
+    margin: 0 auto;
+  }
 }

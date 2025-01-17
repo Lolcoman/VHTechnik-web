@@ -9,7 +9,7 @@ weight =  5
 - Vyrábíme vysoce přesné výrobky dle Vaší technické dokumentace nebo požadovaný díl vyrobíme podle předaného vzoru
 - Výroba kalibrů a měřících nástrojů včetně kalibračního protokolu
 - Oprava a výroba upínacích zařízení
-- Konstrukce a doporučení úpravy a zlepšovacích návrhů
+- Konstrukce, doporučené úpravy, zlepšovací návrhy
 - Poradenská a obchodní činnost v brusných a řezacích nástrojích
 
 ### Vznik firmy
