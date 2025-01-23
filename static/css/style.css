@@ -322,8 +322,8 @@ section ul li::before {
   margin-bottom: 5px;
   padding-left: 0px;
 }
-#kontakty blockquote p {
-  margin-top: -15px;
+#kontakty > div > div > ul:nth-child(5) > li > p {
+  margin: 0;
 }
 #kontakty h2 {
   flex-direction: column;
@@ -360,45 +360,72 @@ header {
   position: relative;
 }
 
+/* Obecné styly pro hlavičku */
+#main-header {
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+  display: none; /* Tlačítko toggle menu výchozí skryté */
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.menu-text {
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
 .menu {
-  display: flex; /* Normálně viditelné na desktopu */
-  flex-direction: row;
-  justify-content: center;
+  display: flex; /* Výchozí menu je viditelné pro desktop */
+  justify-content: space-around;
+  align-items: center;
 }
 
 .menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  gap: 15px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.menu li a {
+.menu li {
+  margin: 0 30px;
+}
+
+.menu a {
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
-  display: block;
+  padding: 10px 5px;
 }
 
-.menu li a:hover {
+.menu a:hover {
   background-color: #444;
-  border-radius: 5px;
 }
 
-/* Tlačítko pro otevření menu na mobilu */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
+@media screen and (max-width: 768px) {
+  iframe {
+    height: 300px; /* Menší výška iframe na mobilních zařízeních */
+    width: 95%;
+  }
 }
 
 /* Mobilní zobrazení */
 @media screen and (max-width: 768px) {
   .menu {
     display: none; /* Skryjeme menu */
-    flex-direction: column; /* Zobrazí se vertikálně */
+    flex-direction: column;
     background-color: #333;
     position: absolute;
     top: 50px;
@@ -411,12 +438,23 @@ header {
     display: flex; /* Zobrazíme menu po kliknutí */
   }
 
-  .menu-toggle {
-    display: block; /* Tlačítko viditelné pouze na mobilech */
+  .menu ul {
+    flex-direction: column; /* Menu je vertikální */
+    align-items: center;
   }
 
   .menu li {
-    border-bottom: 1px solid #444; /* Oddělovač mezi položkami */
+    border-bottom: 1px solid #444;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu a {
+    padding: 15px 10px;
+  }
+
+  .menu-toggle {
+    display: flex; /* Tlačítko viditelné pouze na mobilních zařízeních */
   }
 }
 
@@ -447,6 +485,9 @@ header {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 60px; /* Nastavte výšku mezer podle potřeby */
+  }
   /* Pro flex-container */
   #domu {
     height: 920px;
@@ -532,5 +573,9 @@ header {
   #kontakty > div > div > blockquote {
     padding: 0 auto;
     margin: 0 auto;
+  }
+  #konstrukce div div {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
 }

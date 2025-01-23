@@ -59,11 +59,16 @@
 @media screen and (max-width: 768px) {
   .image-gallery {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    max-height: 430px;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 }
 
 @media screen and (max-width: 480px) {
   .image-gallery {
-    grid-template-columns: 1fr;
+    gap: 10px;
+    max-height: 640px;
   }
 }

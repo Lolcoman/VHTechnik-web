@@ -1,8 +1,7 @@
 +++
 date = '2024-12-17T17:27:53+01:00'
-draft = true
 title = 'O firmě'
-weight =  5
+weight =  1
 +++
 
 - Nabízíme výrobu, opravy, kooperace, technické poradenství a vše co je v našich možnostech

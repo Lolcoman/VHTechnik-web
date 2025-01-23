@@ -17,3 +17,14 @@
   </li>
   {{ end }} {{ end }}
 </ul>
+
+<!-- Lightbox struktura -->
+<div id="lightbox" style="display: none">
+  <div class="lightbox-content">
+    <div id="lightbox-title"></div>
+    <!-- Název obrázku nahoře -->
+    <img id="lightbox-img" src="" alt="Lightbox Image" />
+    <button id="prev-arrow" onclick="changeImage(-1)">&#10094;</button>
+    <button id="next-arrow" onclick="changeImage(1)">&#10095;</button>
+  </div>
+</div>

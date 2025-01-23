@@ -1,5 +1,11 @@
 /* footer.css */
 
+body {
+  margin: 10px;
+  padding-bottom: 80px; /* Výška footeru */
+  box-sizing: border-box;
+}
+
 .footer {
   background-color: #2a2a2a;
   color: #ffffff;
@@ -10,6 +16,18 @@
   width: 100%;
   left: 0;
   z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Specifické úpravy pro zařízení podporující viewport-fit */
+@supports (padding: max(0px)) {
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom));
+  }
+
+  .footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 .footer-container {
@@ -52,10 +70,12 @@
   border-top: 1px solid #ddd; /* Jemná čára pod textem */
   display: inline-block; /* Aby čára nepřesahovala text */
 }
+
 .footer .footer-center p {
   font-style: italic;
   color: #666;
 }
+
 .footer h3 {
   font-size: 14px;
   margin-bottom: 5px;
@@ -82,52 +102,55 @@
     text-align: center;
   }
 }
+
 @media screen and (max-width: 768px) {
-  /* Změní uspořádání footeru na mobilních zařízeních na vedle sebe */
+  /* Kompaktní footer */
+  .footer {
+    padding: 3px 5px; /* Minimální padding pro footer */
+    font-size: 1.5rem; /* Menší obecná velikost textu */
+    position: fixed;
+  }
+
+  /* Footer container: Kompaktní a zarovnané vedle sebe */
   .footer-container {
-    flex-direction: row; /* Sekce vedle sebe */
-    justify-content: space-between; /* Rozdělí prostor rovnoměrně mezi sekcemi */
-    padding: 10px 0; /* Snížení paddingu pro zkompaktizování footeru */
-    flex-wrap: wrap; /* Umožní zalamování sekcí */
+    flex-direction: row-reverse;
+    padding: 3px 0; /* Menší vnitřní mezery */
+    gap: 5px; /* Prostor mezi sekcemi */
   }
 
-  /* Zmenšení velikosti loga */
+  .footer-left {
+    display: none;
+  }
+  /* Zmenšení loga */
   .footer-logo {
-    max-height: 30px; /* Zmenšení loga na mobilních zařízeních */
+    max-height: 15px; /* Velmi malé logo */
   }
 
-  /* Zmenšení písma v levé, střední a pravé sekci */
-  .footer-left p,
-  .footer-center p,
-  .footer-right p {
-    font-size: 0.7rem; /* Menší písmo pro texty */
-    margin: 3px 0; /* Snížení mezer mezi texty */
-  }
-
-  /* Menší font pro nadpisy */
+  /* Texty a nadpisy kompaktní */
   .footer h3 {
-    font-size: 10px; /* Menší velikost nadpisu */
-    margin-bottom: 3px; /* Menší mezera pod nadpisem */
+    font-size: 0.9rem; /* Menší nadpisy */
+    margin-bottom: 2px;
   }
 
-  /* Změna velikosti písma pro všechny texty */
   .footer p {
-    font-size: 0.7rem; /* Zmenšení písma pro texty */
-    color: #ddd;
-    margin: 2px 0; /* Zmenšení mezer mezi texty */
+    font-size: 0.7rem; /* Velmi malé písmo pro texty */
+    margin: 1px 0; /* Minimální mezery mezi řádky */
   }
 
-  /* Změna šířky sekcí */
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    margin-bottom: 10px; /* Snížení mezer mezi sekcemi */
-    width: 32%; /* Zajištění rovnoměrné šířky pro všechny sekce */
+  /* Smazání ikon nebo marginů kolem textu */
+  .footer i {
+    margin-right: 3px;
+    font-size: 0.7rem; /* Menší ikony */
   }
 
-  /* Zajištění, že text v pravé sekci bude mít dostatek prostoru */
+  /* První a poslední sekce více prostoru */
+  .footer-left {
+    text-align: left; /* Zarovnání na levé straně */
+  }
+
   .footer-right {
-    white-space: normal; /* Umožní textu zalamovat se na novou řadu */
-    word-wrap: break-word; /* Zajistí, že dlouhé slova se zabalí */
+    text-align: right; /* Zarovnání na pravé straně */
+    white-space: normal; /* Umožní zalamování textu */
+    word-wrap: break-word;
   }
 }

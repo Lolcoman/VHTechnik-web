@@ -1,5 +1,12 @@
-baseURL = 'https://vh-technik.cz'
+baseURL = 'https://vh-technik.cz/'
 languageCode = 'cs'
 title = 'VH-TECHNIK s.r.o.'
+theme = ["hugo-cloak-email"]
+# Publikační pravidla
+buildDrafts = false  # V produkci false
+buildFuture = false  # Obsah s datem v budoucnosti se ignoruje
+buildExpired = false # Obsah s datem v minulosti se ignoruje
 [params]
   enableSitemap = true
+  author = "Ing. Michael Kozák"
+  cloakEmail = true
