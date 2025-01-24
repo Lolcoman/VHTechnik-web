@@ -490,7 +490,7 @@ header {
   }
   /* Pro flex-container */
   #domu {
-    height: 920px;
+    height: 1045px;
   }
   .flex-container {
     flex-direction: column; /* Změní směr na sloupec */

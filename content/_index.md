@@ -17,7 +17,7 @@ images = [
     "/images/slide12.jpg"
 ]
 bullet_points = [
-  "Výroby kalibrů, měřidel, popis noniusů a další včetně kalibračního protokolu",
+  "Výroba dílů dle požadavku zákazníka, například přípravků, upínačů, chapačů, dorazů atd."," Výroba kalibrů, měřidel, popis noniusů a další včetně kalibračního protokolu",
   "Renovace a opravy",
   "Poradenská činnost ve strojírenství",
   "Obchodní činnost v brusných a řezacích nástrojích"
